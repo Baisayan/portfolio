@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Baisayan",
@@ -13,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-mono antialiased`}>{children}</body>
+      <body className={`${jetbrains.className} antialiased`}>{children}</body>
     </html>
   );
 }
