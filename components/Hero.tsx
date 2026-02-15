@@ -1,11 +1,39 @@
 "use client";
 
 import React from "react";
-import { Mail, Twitter, Github, Linkedin, Download } from "lucide-react";
-// import SocialLink from "./SocialLink";
+import { Mail, Twitter, Github, Linkedin, Instagram, Download } from "lucide-react";
 import Image from "next/image";
+import { Button } from "./ui/button";
 
 const Hero: React.FC = () => {
+  const socials = [
+    {
+      name: "GitHub",
+      icon: Github,
+      url: "https://github.com/Baisayan",
+    },
+    {
+      name: "Twitter",
+      icon: Twitter,
+      url: "https://x.com/BBaisayan",
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      url: "https://linkedin.com/in/baisayan-bhattacharya",
+    },
+    {
+      name: "Email",
+      icon: Mail,
+      url: "mailto:bbbbaisayan@gmail.com",
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      url: "https://instagram.com/baisayan_b",
+    },
+  ];
+
   return (
     <section className="py-12 mb-16">
       <div className="flex items-start gap-4 mb-8">
@@ -58,22 +86,19 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="flex flex-wrap gap-3 mb-8">
-        {/* <SocialLink
-          icon={Mail}
-          label="Email"
-        />
-        <SocialLink
-          icon={Twitter}
-          label="Twitter"
-        />
-        <SocialLink
-          icon={Github}
-          label="GitHub"
-        />
-        <SocialLink
-          icon={Linkedin}
-          label="LinkedIn"
-        /> */}
+        {socials.map((social) => (
+          <Button key={social.name} variant="ghost" size="sm" asChild>
+            <a
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <social.icon className="h-4 w-4" />
+              {social.name}
+            </a>
+          </Button>
+        ))}
       </div>
 
       <div className="w-full h-px bg-linear-to-r from-transparent via-emerald-500/50 to-transparent"></div>
