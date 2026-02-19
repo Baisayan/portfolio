@@ -1,11 +1,18 @@
 "use client";
 
-import React from "react";
-import { Mail, Twitter, Github, Linkedin, Instagram, Download } from "lucide-react";
+import {
+  Twitter,
+  Github,
+  Linkedin,
+  Instagram,
+  Code,
+  Download,
+  MapPin,
+} from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const socials = [
     {
       name: "GitHub",
@@ -20,18 +27,18 @@ const Hero: React.FC = () => {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/baisayan-bhattacharya",
+      url: "https://linkedin.com/in/baisayan",
     },
     {
-      name: "Email",
-      icon: Mail,
-      url: "mailto:bbbbaisayan@gmail.com",
+      name: "Leetcode",
+      icon: Code,
+      url: "https://leetcode.com/u/bSXEYnRKis/",
     },
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://instagram.com/baisayan_b",
-    },
+      url: "https://instagram.com/baisayan",
+    }
   ];
 
   return (
@@ -46,11 +53,13 @@ const Hero: React.FC = () => {
         />
         <div className="space-y-2">
           <h1 className="text-3xl font-bold">Baisayan Bhattacharya</h1>
-          <p className="text-gray-400">@Baisayan</p>
+          <div className="text-muted-foreground flex items-center gap-2">
+            <MapPin className="size-6 text-emerald-500" /> Delhi, India
+          </div>
         </div>
       </div>
 
-      <div className="space-y-3 text-sm text-gray-400 mb-8">
+      <div className="space-y-4 text-sm text-muted-foreground mb-8">
         <p>
           A Software Engineeer based in Delhi, India. I build production-ready
           applications with modern technologies.
@@ -73,14 +82,14 @@ const Hero: React.FC = () => {
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-3 py-1 text-sm rounded-md border"
         >
-          <Download className="size-4" />
+          <Download className="size-4 text-ring" />
           Download CV
         </a>
         <a
           href="mailto:bbbbaisayan@gmail.com"
           className="flex items-center gap-2 px-3 py-1 text-sm rounded-md border"
         >
-          <span className="size-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span className="size-2 rounded-full bg-ring animate-pulse"></span>
           Open to work for your idea
         </a>
       </div>
@@ -94,7 +103,7 @@ const Hero: React.FC = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2"
             >
-              <social.icon className="h-4 w-4" />
+              <social.icon className="size-4 text-ring" />
               {social.name}
             </a>
           </Button>
