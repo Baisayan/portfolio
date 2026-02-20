@@ -42,11 +42,11 @@ const Hero = () => {
     <section className="py-12 mb-10">
       <div className="flex items-start gap-4 mb-8">
         <Image
-          width={24}
-          height={24}
+          width={96}
+          height={96}
           src="/logo.png"
           alt="Baisayan"
-          className="size-24 rounded-full shrink-0 object-cover"
+          className="rounded-full shrink-0 object-cover border-2"
         />
         <div className="space-y-2">
           <h1 className="text-3xl font-bold">Baisayan Bhattacharya</h1>
